@@ -12,13 +12,13 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-pipe = load('trained_use_logreg.joblib')
-
 
 # route api pour requête get
 
-@app.route("/api")
-def my_api(text = input("entrez du texte : ")) :
+pipe = load('trained_use_logreg.joblib')
+
+@app.route("/api/text=<text>")
+def my_api(text) :
 
 	text_clean = preprocess(text)
 	output = pipe.predict([text_clean])

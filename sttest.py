@@ -1,22 +1,11 @@
 import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.datasets import load_iris
+import requests
 
 import streamlit as st
 
-@st.cache_data
-def load_data() :
-	data = load_iris()
-	df = pd.DataFrame(data = data.data, columns = data.feature_names)
-	return df
 
-data = load_data()
-st.write(data)
+text = st.text_input(label = "Enter your question : ")
+res = requests.get("http://127.0.0.1:5000/api/text=" + ''.join(text))
+res = pd.read_json(res.content.decode('utf-8')).loc[0, 'tags']
 
-fig = plt.figure(figsize=(10, 4))
-sns.barplot(data = data, y = 'sepal length (cm)', x = 'sepal width (cm)')
-plt.title("Dummy barplot")
-
-
-st.pyplot(fig)
+st.write(res)
