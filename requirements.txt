@@ -1,0 +1,8 @@
+pandas
+numpy
+nltk
+tensorflow_hub
+joblib
+flask
+requests
+streamlit
