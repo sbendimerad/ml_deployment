@@ -1,6 +1,7 @@
 pandas
 numpy
 nltk
+tensorflow
 tensorflow_hub
 joblib
 flask
