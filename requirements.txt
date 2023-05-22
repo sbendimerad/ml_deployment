@@ -1,5 +1,6 @@
 pandas
 numpy
+scikit-learn
 nltk
 tensorflow
 tensorflow_hub

@@ -62,7 +62,9 @@ def preprocess(text) :
 
 # Fonction de feature extraction pas USE
 
-embed = hub.load("https://tfhub.dev/google/universal-sentence-encoder/4")
+model_path = "https://tfhub.dev/google/universal-sentence-encoder/4"
+
+embed = hub.load(model_path)
 
 def feature_USE_fct(sentences, b_size = 10) :
     batch_size = b_size
