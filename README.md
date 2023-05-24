@@ -19,8 +19,10 @@ Afin de pouvoir utiliser l'algorithme, voici la marche à suivre :
 
 - Téléchargez le code de ce répertoire (soit via une commande `git clone` soit en téléchargement direct)
 - Ouvrez une ligne de commande et naviguez jusqu'au dossier créé
+- Créez un environnement virtuel conda ou venv (optionnel mais conseillé)
+- Tapez la commande `pip install requirements.txt` afin d'installer tous les modules nécessaires au fonctionnement de l'algorithme
 - Tapez la commande `python app.py` et patientez, cela sert à lancer le serveur
-- Dans un nouvel onglet, toujours dans le dossier du répertoire, tapez la commande `streamlit run sttest.py` et une fenêtre devrait s'ouvrir dans votre navigateur.
+- Dans un nouvel onglet de votre terminal, toujours dans le dossier du répertoire, tapez la commande `streamlit run sttest.py` et une fenêtre devrait s'ouvrir dans votre navigateur.
 
 Si tout fonctionne, vous voyez s'afficher une barre de saisie et l'on vous demande d'entrer du texte.
 Si vous saisissez une question sur le thème de l'informatique, vous devriez voir s'afficher un tag recommandé selon le sujet que vous abordez. Si l'algorithme ne sait pas quoi vous recommander, il vous le dira.
