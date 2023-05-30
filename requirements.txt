@@ -1,7 +1,8 @@
-numpy
-scikit-learn
-spacy
-tensorflow-cpu
-tensorflow_hub
-joblib
-flask
+numpy==1.23.2
+scikit-learn==1.2.2
+spacy==3.5.2
+tensorflow-cpu==2.12.0
+tensorflow_hub==0.13.0
+joblib==1.2.0
+flask==2.3.2
+gunicorn
