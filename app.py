@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from joblib import load
 
-from use import preprocess, clean_output
+from use import lemmatizaion, clean_output
 
 app = Flask(__name__)
 
@@ -20,7 +20,7 @@ pipe = load('trained_bow_logreg.joblib')
 @app.route("/api/text=<text>")
 def my_api(text) :
 
-	text_clean = preprocess(text)
+	text_clean = lemmatization([text])
 	output = pipe.predict([text_clean])
 	output_clean = clean_output(output)
 
