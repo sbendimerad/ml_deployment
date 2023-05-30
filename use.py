@@ -12,6 +12,8 @@ import numpy as np
 
 import spacy
 
+spacy.load('en_core_web_sm')
+
 import tensorflow_hub as hub
 
 
