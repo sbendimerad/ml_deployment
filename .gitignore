@@ -4,4 +4,3 @@ __pycache__/
 notebooks/
 .DS_Store
 test.py
-nltk.txt
