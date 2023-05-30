@@ -1,10 +1,7 @@
-pandas
 numpy
 scikit-learn
 spacy
-tensorflow
+tensorflow-cpu
 tensorflow_hub
 joblib
 flask
-requests
-streamlit
