@@ -15,7 +15,7 @@ def hello():
 
 # route api pour requête get
 
-pipe = load('trained_use_logreg.joblib')
+pipe = load('trained_bow_logreg.joblib')
 
 @app.route("/api/text=<text>")
 def my_api(text) :

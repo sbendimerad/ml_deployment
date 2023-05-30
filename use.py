@@ -81,20 +81,6 @@ def lemmatization(text, allowed_postags = ["NOUN", "VERB", "ADJ", "ADV"]) :
     final = " ".join(new_text)
     return final
 
-# Fonction de feature extraction pas USE
-
-model_path = "https://tfhub.dev/google/universal-sentence-encoder/4"
-
-embed = hub.load(model_path)
-
-def feature_USE_fct(sentences, b_size = 10) :
-    batch_size = b_size
-
-    features = embed(sentences[0:batch_size]).numpy()
-
-    return features
-
-
 # Fonction de mise en forme du résultat
 
 def clean_output(result) :
