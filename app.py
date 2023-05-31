@@ -29,8 +29,6 @@ def my_api(text) :
 		"tags" : output_clean
 	}
 
-	print(dictionnaire)
-
 	return jsonify(dictionnaire)
 
 if __name__ == "__main__" :
