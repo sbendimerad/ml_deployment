@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from joblib import load
 
-from use import lemmatizaion, clean_output
+from use import lemmatization, clean_output
 
 app = Flask(__name__)
 
