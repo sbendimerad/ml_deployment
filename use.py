@@ -10,7 +10,7 @@ import spacy
 
 #spacy.load('en_core_web_sm')
 
-import tensorflow_hub as hub
+#import tensorflow_hub as hub
 
 
 # def preprocess(text) :
