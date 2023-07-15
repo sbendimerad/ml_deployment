@@ -39,14 +39,13 @@ def preprocess(text):
             token = ''.join(char for char in token if char not in punctuation and not char.isdigit())
             new_text.append(token)
 
-    lem = nltk.stem.WordNetLemmatizer()
-"""
+
     for token in new_text:
         # Lemmatize verbs
         if nltk.pos_tag([token])[0][1].startswith('V'):
             index = new_text.index(token)
             token_lem = lem.lemmatize(token, pos='v')
-            new_text[index] = new_text[index].replace(token, token_lem)"""
+            new_text[index] = new_text[index].replace(token, token_lem)
 
     new_text = ' '.join(new_text)
 
