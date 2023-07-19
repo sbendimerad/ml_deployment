@@ -1,25 +1,26 @@
 from flask import Flask, jsonify
 from joblib import load
-from use import preprocess, clean_output
+from preprocess import preprocess, clean_output
+# import sklearn
 
-app = Flask(__name__)
+api = Flask(__name__)
 
-pipe = load('trained_use_logreg.joblib')
-
+pipe = load('OneVs_logReg.joblib')
+pipe2 = load('countVectorizer.joblib')
 
 
 # route test hello world
-@app.route("/")
+@api.route("/")
 def hello():
     return "Hello World!"
 
 
 # route api pour requête get
-@app.route("/api/text=<text>")
+@api.route("/api/text=<text>")
 def my_api(text) :
-
 	text_clean = preprocess(text)
-	output = pipe.predict([text_clean])
+	features = pipe2.transform([text_clean])
+	output = pipe.predict(features)
 	output_clean = clean_output(output)
 
 	dictionnaire = {
@@ -30,4 +31,5 @@ def my_api(text) :
 	return jsonify(dictionnaire)
 
 if __name__ == "__main__" :
-	app.run(debug = True)
+	api.run(debug = True)
+
