@@ -1,6 +1,3 @@
-# Projet OpenClassrooms "Catégorisez automatiquement des questions"
-### Sana TAYS
-
 Le but de ce projet est de créer un algorithme capable de prendre des données textuelles en entrée, en l'occurrence il s'agira de questions issues du forum StackOverflow, et de prédire en sortie quel tag serait le plus pertinent à proposer, afin d'automatiser et faciliter le référencement des questions sur le site.
 
 L'algorithme utilisé ici est une pipeline contenant une étape de feature extraction par le USE (Universal Sentence Encoder) de Tensorflow, ainsi qu'une étape de classification par Régression Logistique. Le modèle pré-entraîné est disponible dans le fichier trained_use_logreg.joblib.

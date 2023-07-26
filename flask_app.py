@@ -3,12 +3,13 @@ from joblib import load
 from preprocess import lemmatization, clean_output
 
 app = Flask(__name__)
-
 pipe = load('trained_bow_logreg.joblib')
+
 
 @app.route("/")
 def hello():
     return "Hello World!"
+
 
 @app.route("/api/text=<text>")
 def my_api(text) :
