@@ -1,27 +1,28 @@
-Le but de ce projet est de créer un algorithme capable de prendre des données textuelles en entrée, en l'occurrence il s'agira de questions issues du forum StackOverflow, et de prédire en sortie quel tag serait le plus pertinent à proposer, afin d'automatiser et faciliter le référencement des questions sur le site.
+## Text Classification for StackOverflow Tags
 
-L'algorithme utilisé ici est une pipeline contenant une étape de feature extraction par le USE (Universal Sentence Encoder) de Tensorflow, ainsi qu'une étape de classification par Régression Logistique. Le modèle pré-entraîné est disponible dans le fichier trained_use_logreg.joblib.
+The purpose of this project is to create an algorithm capable of taking textual data as input, specifically questions from the StackOverflow forum, and predicting the most relevant tag to automate and streamline question indexing on the site.
 
-Le modèle est déployé sur une application web via l'outil Streamlit.
+The algorithm used in this project consists of a pipeline with two main steps. It leverages the CountVectorizer for feature extraction and employs Logistic Regression based on the OneVsRestClassifier approach for multi-label classification. The pre-trained model is available in the file `trained_bow_logreg.joblib`.
 
-Ce répertoire contient notamment :
+The model is deployed on a web application using Flask, Streamlit, and Heroku.
 
-- un fichier app.py qui est notre API
-- un fichier use.py qui contient toutes les fonctions liées à l'utilisation du modèle
-- un fichier sttest.py qui contient les informations de l'interface de la web app
+This repository includes the following files:
 
-___
+* `flask_app.py`: Our API
+* `preprocess.py`: Contains all functions to prepare the data
+* `viz_app.py`: Contains information about the Streamlit web app's interface
 
-Afin de pouvoir utiliser l'algorithme, voici la marche à suivre :
+To use the algorithm, follow these steps:
 
-- Téléchargez le code de ce répertoire (soit via une commande `git clone` soit en téléchargement direct)
-- Ouvrez une ligne de commande et naviguez jusqu'au dossier créé
-- Créez un environnement virtuel conda ou venv (optionnel mais conseillé)
-- Tapez la commande `pip install requirements.txt` afin d'installer tous les modules nécessaires au fonctionnement de l'algorithme
-- Tapez la commande `python app.py` et patientez, cela sert à lancer le serveur
-- Dans un nouvel onglet de votre terminal, toujours dans le dossier du répertoire, tapez la commande `streamlit run sttest.py` et une fenêtre devrait s'ouvrir dans votre navigateur.
+1. Download the code from this repository (either using `git clone` or direct download).
+2. Open a command line interface and navigate to the downloaded folder.
+3. Create a virtual environment using conda or venv (optional but recommended).
+4. Run the command `pip install -r requirements.txt` to install all the necessary modules for the algorithm to work.
+5. Run the command `python flask_app.py` and wait for the server to launch.
+6. In a new terminal tab, still within the repository folder, run the command `streamlit run viz_app.py`. A window should open in your browser.
 
-Si tout fonctionne, vous voyez s'afficher une barre de saisie et l'on vous demande d'entrer du texte.
-Si vous saisissez une question sur le thème de l'informatique, vous devriez voir s'afficher un tag recommandé selon le sujet que vous abordez. Si l'algorithme ne sait pas quoi vous recommander, il vous le dira.
+If everything works correctly, you should see an input bar prompting you to enter text. When you input a computer-related question, the algorithm will recommend relevant tags based on the topic you are addressing. If the algorithm is unsure of what to recommend, it will let you know.
 
-Bonne utilisation !
+Don't forget to deploy everything on Heroku!
+
+Enjoy using the application!
