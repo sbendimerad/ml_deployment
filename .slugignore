@@ -1,7 +1,0 @@
-env/
-__pycache__/
-.ipynb_checkpoints/
-notebooks/
-.DS_Store
-test.py
-nltk.txt
