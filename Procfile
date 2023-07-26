@@ -1,2 +1,2 @@
-web: gunicorn app:app
-web: sh setup.sh && streamlit run sttest.py
+web: gunicorn flask_app:api
+web: sh setup.sh && streamlit run viz_app.py
